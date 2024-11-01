@@ -16,7 +16,8 @@ data class Config(
     val leave: EventConfig,
     val death: EventConfig,
     val playerCommand: EventConfig,
-    val serverCommand: EventConfig
+    val serverCommand: EventConfig,
+    val restart: EventConfig
 )
 
 object ConfigLoader {
@@ -157,6 +158,22 @@ object ConfigLoader {
                     iconUrl = "https://minotar.net/helm/{player}/512.png"
                     [serverCommand.embed.footer]
                     text = "Server Command"
+                    iconUrl = "https://cdn.discordapp.com/embed/avatars/0.png"
+
+                    # This gets ran whenever ScheduledRestart runs
+                    [restart]
+                    webhook = "https://discord.com/api/webhooks/123456/abcdef"
+                    embedEnabled = false
+                    [restart.embed]
+                    title = "restart Message"
+                    description = "{message}"
+                    color = "#FFC0CB"
+                    timestamp = true
+                    [restart.embed.author]
+                    name = "{player}"
+                    iconUrl = "https://minotar.net/helm/{player}/512.png"
+                    [restart.embed.footer]
+                    text = "restart"
                     iconUrl = "https://cdn.discordapp.com/embed/avatars/0.png"
                 """.trimIndent()
             )

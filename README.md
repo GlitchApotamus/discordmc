@@ -150,4 +150,21 @@ iconUrl = "https://minotar.net/helm/{player}/512.png"
 [serverCommand.embed.footer]
 text = "Server Command"
 iconUrl = "https://cdn.discordapp.com/embed/avatars/0.png"
+
+# This gets ran whenever ScheduledRestart runs
+# Currently no placeholders
+[restart]
+webhook = "https://discord.com/api/webhooks/123456/abcdef"
+embedEnabled = false
+[restart.embed]
+title = "restart Message"
+description = ""
+color = "#FFC0CB"
+timestamp = true
+[restart.embed.author]
+name = ""
+iconUrl = "https://minotar.net/helm/{player}/512.png"
+[restart.embed.footer]
+text = "restart"
+iconUrl = "https://cdn.discordapp.com/embed/avatars/0.png"
 ```
